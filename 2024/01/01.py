@@ -45,7 +45,7 @@ def find_similarities(entry_1, entry_2):
 
     return similarity_score
 
-tabs = read_input("01.test.input")
+tabs = read_input("01/01.test.input")
 distance = find_distance(tabs[0], tabs[1])
 print("\r")
 print("\rDistance : " + str(distance))
@@ -53,7 +53,7 @@ similarity = find_similarities(tabs[0], tabs[1])
 print("\r")
 print("\rSimilarity : " + str(similarity))
 
-tabs = read_input("01.input")
+tabs = read_input("01/01.input")
 distance = find_distance(tabs[0], tabs[1])
 print("\r")
 print("\rDistance : " + str(distance))
