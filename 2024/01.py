@@ -28,12 +28,35 @@ def read_input(filename):
 
     return [ tab_1, tab_2 ]
 
+def find_similarities(entry_1, entry_2):
+    dict_2 = dict()
+
+    ## Calcul du nombre d'occurences de chaque entrée "à droite"
+    for i in range(len(entry_2)):
+        if entry_2[i] in dict_2:
+            dict_2[entry_2[i]] += 1
+        else:
+            dict_2[entry_2[i]] = 1
+
+    similarity_score = 0
+    for i in range(len(entry_1)):
+        if entry_1[i] in dict_2:
+            similarity_score += entry_1[i] * dict_2[entry_1[i]]
+
+    return similarity_score
+
 tabs = read_input("01.test.input")
 distance = find_distance(tabs[0], tabs[1])
 print("\r")
 print("\rDistance : " + str(distance))
+similarity = find_similarities(tabs[0], tabs[1])
+print("\r")
+print("\rSimilarity : " + str(similarity))
 
 tabs = read_input("01.input")
 distance = find_distance(tabs[0], tabs[1])
 print("\r")
 print("\rDistance : " + str(distance))
+similarity = find_similarities(tabs[0], tabs[1])
+print("\r")
+print("\rSimilarity : " + str(similarity))
